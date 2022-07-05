@@ -25,29 +25,28 @@ Esta rota demonstra todas as hash geradas de acordo com a string informada e a s
 
 # Solução apresentada
 
-Conforme foi solicitado as 3 funcionalidades, sendo elas:
-1. A criação de uma rota que encontra um hash, de certo formato, para uma certa string fornecida como
-input.
-R: A rota `/home` há dois inputs para geração de uma hash, sendo deles:
-STRING - Informar com qual string quer gerar a hash.
-REQUISIÇÕES - Assim como é informado no command do symfony a quantidade de requisições, coloquei um input para a quantidade de requisições desejadas.
-È possivel navegar entre as rotas para visualizar as hash ja geradas anteriormente conforme sera apresentado na ultima funcionalidade solicitada.
+Conforme foi solicitado as 3 funcionalidades, sendo elas:<br>
+1. A criação de uma rota que encontra um hash, de certo formato, para uma certa string fornecida como input.<br>
+R: A rota `/home` há dois inputs para geração de uma hash, sendo deles: <br>
+STRING - Informar com qual string quer gerar a hash.<br>
+REQUISIÇÕES - Assim como é informado no command do symfony a quantidade de requisições, coloquei um input para a quantidade de requisições desejadas.<br>
+È possivel navegar entre as rotas para visualizar as hash ja geradas anteriormente conforme sera apresentado na ultima funcionalidade solicitada.<br>
 <div align="center">
 <img src="https://i.imgur.com/ljomW1C.png" height='300' width='600'>
 </div>
 
-2. A criação de um comando que consulta a rota criada e armazena os resultados na base de dados.
-R: Ao rodar o seguinte comando no terminal do projeto `php bin/console gerar-hash (string) (requisições)` sera demonstrado os resultados no console e salvo as informações no banco de dados mencionadas no .env
+2. A criação de um comando que consulta a rota criada e armazena os resultados na base de dados.<br>
+R: Ao rodar o seguinte comando no terminal do projeto `php bin/console gerar-hash (string) (requisições)` sera demonstrado os resultados no console e salvo as informações no banco de dados mencionadas no .env<br>
 <div align="center"><img src="https://i.imgur.com/5AgDLY0.png"></div>
 
-3. Criação de rota que retorne os resultados que foram gravados.
-R: À rota '/visualizar-resultados' foi criada com o intuito de visualizar as hash salvas no banco de dados conforme é apresentado na imagem abaixo. Sendo possivel filtrar pela quantidade de tentativas.
-<div align="center"><img src="https://i.imgur.com/KJKADDe.png"></div>
+3. Criação de rota que retorne os resultados que foram gravados.<br>
+R: À rota `/visualizar-resultados` foi criada com o intuito de visualizar as hash salvas no banco de dados conforme é apresentado na imagem abaixo. Sendo possivel filtrar pela quantidade de tentativas.<br>
+<div align="center"><img src="https://i.imgur.com/KJKADDe.png"></div><br>
 
-OBS: O botão retornar, leva para a pagina inicial
+OBS: O botão retornar, leva para a pagina inicial<br>
 
-Caso o filtro seja informado a quantidade de tentativas desejadas, sera escondido os demais dados, conforme demonstrado a imagem abaixo.
-<div align="center"><img src="https://i.imgur.com/fYIJ9Th.png"></div>
+Caso o filtro seja informado a quantidade de tentativas desejadas, sera escondido os demais dados, conforme demonstrado a imagem abaixo.<br>
+<div align="center"><img src="https://i.imgur.com/fYIJ9Th.png"></div><br>
 
-OBS: Para que os dados anteriores apareçam novamente basta clicar no botão "Limpar filtros"
+OBS: Para que os dados anteriores apareçam novamente basta clicar no botão "Limpar filtros"<br>
 
