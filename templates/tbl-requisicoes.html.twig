@@ -66,7 +66,7 @@ function filtrar() {
   for (var i = 1; i <= contagem ; i++){
         var tentativa = $("#tentativas-"+i).text()
         var hashGerada = $("#hash-"+i)
-        if(parseInt(tentativa) <= filtro){
+        if(parseInt(tentativa) >= filtro){
             hashGerada[0].hidden = true;
         }
   }
