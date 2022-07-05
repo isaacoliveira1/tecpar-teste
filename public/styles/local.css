@@ -1,0 +1,26 @@
+.bg-purple {
+    background-color: #6f42c1;
+}
+
+
+.rounded {
+    border-radius: .25rem!important;
+}
+
+.bg-white {
+    background-color: #fff!important;
+}
+.p-3 {
+    padding: 1rem!important;
+}
+.my-3 {
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.green {
+    color: rgba(14,174,32,0.56) !important;
+
+}

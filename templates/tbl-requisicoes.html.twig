@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="ibox-content">
+    <div class="row">
+        <div class="col col-md-12">
+
+            <div class="filtros text-center">
+
+                <label>Filtre por quantidade de tentativas: </label>
+                <input type="text" id="filtroTentativas" onfocusout="filtrar()" placeholder="Informe o valor">
+
+                <button style="margin-left: 10px; height: 30px; line-height: 15px" onclick="$('#filtroTentativas').val(''); limparFiltro()" class="btn btn-primary limpar-filtros" >Limpar filtros</button>
+            </div>
+            <table class="table table-bordered lista">
+                <thead>
+                <tr>
+                    <th class="col-btn">Hórario</th>
+                    <th>Num. Bloco</th>
+                    <th>String de Entrada</th>
+                    <th>Chave Encontrada</th>
+                    <th>Hash gerado</th>
+                    <th>Numero de tentativas</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set i = 0 %}
+
+                {% for hash in hashGeradas %}
+                {% set i = i + 1 %}
+
+                    <tr id="hash-{{ i }}">
+                        <td>{{ hash.data|date("d/m/Y H:i:s") }}</td>
+                        <td>{{ hash.id }}</td>
+                        <td>{{ hash.valorEntrada }}</td>
+                        <td>{{ hash.chave }}</td>
+                        <td id="tentativas-{{ i }}">{{ hash.tentativas }}</td>
+                        <td>{{ hash.hash }}</td>
+                    </tr>
+
+                {% endfor %}
+                <input id="contador" type="text" hidden value="{{ i }}">
+
+                </tbody>
+            </table>
+            <a href="{{ absolute_url(path("index")) }}" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-log-out"></i> Retornar</a>
+
+{% endblock %}
+{% block page_js %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
+<script>
+function limparFiltro(){
+    $("#filtroTentativas").val("");
+
+  for (var i = 1; i <= $("#contador").val() ; i++){
+      var hashGerada = $("#hash-"+i)
+      hashGerada[0].hidden = false;
+
+}
+
+}
+function filtrar() {
+  var filtro = $("#filtroTentativas").val();
+  var contagem = $("#contador").val()
+  for (var i = 1; i <= contagem ; i++){
+        var tentativa = $("#tentativas-"+i).text()
+        var hashGerada = $("#hash-"+i)
+        if(parseInt(tentativa) <= filtro){
+            hashGerada[0].hidden = true;
+        }
+  }
+}
+</script>
+
+{% endblock %}
