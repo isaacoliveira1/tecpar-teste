@@ -14,9 +14,9 @@ Este comando realiza a geração de hash de acordo com a string passada e a quan
 
 # Rotas do projeto
 
-/home<br>
+`/home`<br>
 Pagina inicial , onde é possivel informar a string solicitada e quantas requisições fazer.<br>
-/gerarHash<br>
+`/gerarHash`<br>
 Essa rota é responsavel por gerar a hash de acordo com as informações passadas na pagina inicial, é somente feito via POST<br>
-/visualizar-resultados<br>
+`/visualizar-resultados`<br>
 Esta rota demonstra todas as hash geradas de acordo com a string informada e a subsequente em forma de hash concatenada com a string de 8 caracteres.
