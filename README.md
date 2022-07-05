@@ -4,6 +4,8 @@
 2. Entre na pasta do projeto<br>
 3. Rode o comando `composer install` para instalar as dependencias<br>
 4. Rode o comando `symfony server:start` para iniciar a aplicação<br>
+5. Rode o comando `php bin/console doctrine:migrations:migrate` para a inserção da tabela no banco de dados.
+
 
 OBS: Lembre de visualizar se esta correto o banco de dados no .env<br>
 
